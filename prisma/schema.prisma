@@ -1,0 +1,105 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  name          String
+  password      String
+  role          String         // "STUDENT" or "ADMIN"
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  borrows       BorrowRecord[]
+  reservations  Reservation[]
+  reviews       Review[]
+  notifications Notification[]
+}
+
+model Category {
+  id    String @id @default(uuid())
+  name  String @unique
+  books Book[]
+}
+
+model Book {
+  id              String         @id @default(uuid())
+  title           String
+  author          String
+  isbn            String         @unique
+  coverImage      String
+  description     String
+  department      String
+  rackLocation    String
+  status          String         // "AVAILABLE", "BORROWED", "RESERVED"
+  copiesCount     Int            @default(5)
+  availableCopies Int            @default(5)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  
+  categoryId      String
+  category        Category       @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  
+  borrows         BorrowRecord[]
+  reservations    Reservation[]
+  reviews         Review[]
+}
+
+model BorrowRecord {
+  id         String    @id @default(uuid())
+  borrowDate DateTime  @default(now())
+  dueDate    DateTime
+  returnDate DateTime?
+  status     String    // "BORROWED", "RETURNED", "OVERDUE"
+  fineAmount Float     @default(0.0)
+  
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  bookId     String
+  book       Book      @relation(fields: [bookId], references: [id], onDelete: Cascade)
+}
+
+model Reservation {
+  id              String   @id @default(uuid())
+  reservationDate DateTime @default(now())
+  status          String   // "PENDING", "APPROVED", "REJECTED", "COMPLETED"
+  
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  bookId          String
+  book            Book     @relation(fields: [bookId], references: [id], onDelete: Cascade)
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  rating    Int      // 1 to 5
+  comment   String
+  createdAt DateTime @default(now())
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  bookId    String
+  book      Book     @relation(fields: [bookId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  message   String
+  read      Boolean  @default(false)
+  type      String   // "DUE_DATE", "NEW_ARRIVAL", "RESERVATION_APPROVED", "RESERVATION_REJECTED"
+  createdAt DateTime @default(now())
+  
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

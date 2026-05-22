@@ -1,0 +1,91 @@
+.card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.iconContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Color Variants */
+.blue {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+}
+
+.indigo {
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--secondary);
+}
+
+.emerald {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.amber {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+.rose {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+}
+
+.subtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}

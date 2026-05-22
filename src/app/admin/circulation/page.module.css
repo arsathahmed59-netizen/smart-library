@@ -1,0 +1,220 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gridTop {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+}
+
+.panel {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.panel h3, .bottomPanel h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.emptyText {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Reservation requests list styles */
+.reqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.reqItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+}
+
+.reqMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.reqTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.reqStudent {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.actionRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.approveBtn, .rejectBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.approveBtn {
+  background: var(--success);
+  color: var(--text-white);
+}
+
+.approveBtn:hover {
+  background: #059669;
+}
+
+.rejectBtn {
+  background: var(--error);
+  color: var(--text-white);
+}
+
+.rejectBtn:hover {
+  background: #dc2626;
+}
+
+/* Checkout forms styling */
+.checkoutForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.inputGroup label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.inputGroup select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.submitCheckoutBtn {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.submitCheckoutBtn:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.submitCheckoutBtn:disabled {
+  background: var(--border);
+  color: var(--text-light);
+  cursor: not-allowed;
+}
+
+/* Bottom loan logs panel styling */
+.bottomPanel {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.bookTitleCell {
+  font-weight: 600;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fineActive {
+  color: var(--error);
+  font-weight: 700;
+}
+
+.returnBtn {
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.returnBtn:hover {
+  background: var(--primary);
+  color: var(--text-white);
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding: 3rem 0;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .gridTop {
+    grid-template-columns: 1fr;
+  }
+}

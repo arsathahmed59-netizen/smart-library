@@ -1,0 +1,274 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: var(--text-white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.addBtn:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+}
+
+.bookCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.coverImage {
+  width: 32px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.bookTitle {
+  font-weight: 600;
+  color: var(--text-main);
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.isbn {
+  font-family: var(--font-secondary);
+  font-size: 0.85rem;
+}
+
+.actionCol {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editRowBtn, .deleteRowBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  transition: var(--transition);
+}
+
+.editRowBtn { color: var(--primary); }
+.editRowBtn:hover { background: var(--primary-light); border-color: var(--primary); }
+
+.deleteRowBtn { color: var(--error); }
+.deleteRowBtn:hover { background: rgba(239, 68, 68, 0.1); border-color: var(--error); }
+
+/* Modal overlay forms styling */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalCard {
+  width: 100%;
+  max-width: 680px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 2rem;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.modalTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modalTitleRow h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.closeBtn {
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.closeBtn:hover {
+  color: var(--error);
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.inputGroup, .inputGroupFull {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.inputGroup label, .inputGroupFull label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.inputGroup input, .inputGroup select, .inputGroupFull textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.inputGroup input:focus, .inputGroup select:focus, .inputGroupFull textarea:focus {
+  border-color: var(--primary);
+  background: var(--bg-card);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+}
+
+.cancelBtn {
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.cancelBtn:hover {
+  background: var(--border);
+}
+
+.saveBtnForm {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.saveBtnForm:hover {
+  background: var(--primary-hover);
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding: 5rem 0;
+}
+
+.emptyState {
+  padding: 4rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.emptyState h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.emptyState p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

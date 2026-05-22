@@ -1,0 +1,248 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 10% 20%, rgba(222, 237, 255, 0.4) 0%, rgba(253, 240, 255, 0.2) 90%), var(--bg-main);
+  padding: 2rem 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--primary) 0%, #60a5fa 100%);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.logoText {
+  font-size: 1.4rem;
+  font-weight: 850;
+  color: var(--text-main);
+}
+
+.logoAccent {
+  color: var(--primary);
+}
+
+.header {
+  text-align: center;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.errorAlert {
+  padding: 0.75rem 1rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: var(--radius-md);
+  color: var(--error);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-light);
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.input::placeholder {
+  text-transform: none;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.submitBtn:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Presets layout */
+.presetSection {
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.presetSection h3 {
+  font-size: 0.8rem;
+  font-weight: 750;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.presetsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.presetBtn {
+  background: var(--bg-main);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.6rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: var(--transition);
+}
+
+.presetBtn:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.presetActive {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.presetHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.presetIcon {
+  color: var(--primary);
+}
+
+.presetDesc {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.logoutLink {
+  color: var(--error);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logoutLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .presetsList {
+    grid-template-columns: 1fr;
+  }
+}

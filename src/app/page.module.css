@@ -1,0 +1,394 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.logoText {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+}
+
+.logoAccent {
+  color: var(--primary);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  background: var(--gradient-primary);
+  color: var(--text-white);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  transition: var(--transition);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.btnSmall {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+}
+
+.btnSmall:hover {
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.75rem;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.secondaryBtn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  padding: 120px 4rem 60px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.badgeWrapper {
+  display: inline-block;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.sparkleIcon {
+  animation: bounceSlow 2s infinite ease-in-out;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+}
+
+.heroDesc {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 580px;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Hero Visual Showcase */
+.heroVisual {
+  position: relative;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.visualCard {
+  position: absolute;
+  width: 250px;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.5s ease;
+}
+
+.visualCard h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.visualCard p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.cardIconBlue, .cardIconPurple, .cardIconGreen {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardIconBlue { background: rgba(37, 99, 235, 0.1); color: var(--primary); }
+.cardIconPurple { background: rgba(79, 70, 229, 0.1); color: var(--secondary); }
+.cardIconGreen { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+
+.card1 {
+  top: 15%;
+  left: 5%;
+  transform: rotate(-6deg);
+  animation: bounceSlow 3s infinite ease-in-out;
+}
+
+.card2 {
+  bottom: 15%;
+  right: 5%;
+  transform: rotate(4deg);
+  animation: bounceSlow 3s infinite ease-in-out 1s;
+}
+
+.card3 {
+  top: 40%;
+  left: 40%;
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.card3:hover {
+  transform: scale(1.1);
+}
+
+/* Stats Section */
+.stats {
+  padding: 2rem 4rem;
+  max-width: 1200px;
+  margin: 40px auto;
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  gap: 2rem;
+  border: 1px solid var(--border);
+}
+
+.statItem h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.statItem p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Features Grid Section */
+.features {
+  padding: 80px 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.sectionDesc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.featureCard {
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.featureCard:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featureCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.featureCard p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  padding: 2.5rem 4rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: auto;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 100px 2rem 40px;
+    gap: 3rem;
+  }
+  
+  .heroVisual {
+    height: 350px;
+  }
+  
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px 2rem;
+    padding: 2rem;
+  }
+  
+  .features {
+    padding: 40px 2rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+  
+  .navLinks a:not(:last-child) {
+    display: none;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroDesc {
+    font-size: 1rem;
+  }
+  
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

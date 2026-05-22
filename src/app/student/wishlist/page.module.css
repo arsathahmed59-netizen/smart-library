@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.headerCard {
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.headerCard h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.headerCard p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.bookGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding: 5rem 0;
+}
+
+.emptyState {
+  padding: 4rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.emptyState h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.emptyState p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .bookGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bookGrid {
+    grid-template-columns: 1fr;
+  }
+}

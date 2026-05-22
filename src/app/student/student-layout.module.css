@@ -1,0 +1,59 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg-main);
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: var(--transition);
+}
+
+.pageBody {
+  flex: 1;
+  padding: calc(var(--navbar-height) + 1.5rem) 2rem 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg-main);
+  gap: 1rem;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: var(--radius-full);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 70px;
+  }
+  
+  .pageBody {
+    padding: calc(var(--navbar-height) + 1rem) 1rem 1rem;
+  }
+}
